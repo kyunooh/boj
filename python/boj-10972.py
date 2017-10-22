@@ -18,14 +18,12 @@ def next_permutation(permutation, n):
 		permutation[i], permutation[j] = permutation[j], permutation[i]
 		i += 1
 		j -= 1
+	print(' '.join(map(str, permutation)))
 	return True
 
 
 first_permutation = list(range(1, t + 1))
 count = 0
 permutation = first_permutation
-while N != permutation:
-	count += 1
-	if not next_permutation(permutation, t):
-		print(-1)
-print(count)
+if not next_permutation(N, t):
+	print(-1)
