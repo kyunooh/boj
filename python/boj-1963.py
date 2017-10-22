@@ -49,3 +49,4 @@ for _ in range(T):
 				prime_checks(a, j, q, check, depth)
 	if not check[d]: 
 		print("impossible")
+

@@ -33,4 +33,5 @@ def answer():
                 checks[double] = True
                 dist[double] = dist[n] + 1
         
+
 print(answer())
