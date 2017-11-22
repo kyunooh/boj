@@ -1,20 +1,20 @@
 T = int(input())
 
-def get_max_div(a, b):
-	max_div = 1	
-	m = min(a, b)
-
-	for i in range(m, 1, -1):
-		if a % m == 0 and b % m == 0:
-			max_div = i
-			break
-	return max_div
-
+def gcd(m,n):
+    if m < n:
+        m, n = n, m
+    if n == 0:
+        return m
+    if m % n == 0:
+        return n
+    else:
+        return gcd(n, m%n)
 
 for _ in range(T):
-	a, b = tuple(map(int, input().split()))
-	max_div = get_max_div(a, b)
+    a, b = tuple(map(int, input().split()))
+    max_div = gcd(a, b)
+    
+    print(max_div * (a // max_div) * (b // max_div))
 
-	print(max_div * max_div * a * b)
 
 
